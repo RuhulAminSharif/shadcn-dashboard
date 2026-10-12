@@ -145,7 +145,45 @@ const AppSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
 
-    
+      {/* COLLAPSABLE */}
+      <Collapsible defaultOpen className="group/collapsible">
+        <SidebarGroup>
+          <SidebarGroupLabel
+            render={
+              <CollapsibleTrigger>
+                Collapsable Group
+                <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+              </CollapsibleTrigger>
+            }
+          />
+          <CollapsibleContent>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    render={
+                      <Link href="/#">
+                        <Projector />
+                        See All Projects
+                      </Link>
+                    }
+                  />
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    render={
+                      <Link href="/#">
+                        <Plus />
+                        Add Project
+                      </Link>
+                    }
+                  />
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </CollapsibleContent>
+        </SidebarGroup>
+      </Collapsible>
       {/* Sidebar Footer */}
       <SidebarFooter>
         <SidebarMenu>
