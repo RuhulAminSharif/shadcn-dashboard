@@ -3,7 +3,6 @@ import React from "react";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "./ui/chart";
 import { Label, Pie, PieChart } from "recharts";
 import { TrendingUp } from "lucide-react";
-import { CardFooter } from "./ui/card";
 
 export const description = "A donut chart with text";
 const chartData = [
