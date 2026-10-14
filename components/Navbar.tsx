@@ -18,9 +18,9 @@ import { SidebarTrigger, useSidebar } from "./ui/sidebar";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  
+
   return (
-    <nav className="p-4 flex items-center justify-between">
+    <nav className="p-4 flex items-center justify-between sticky top-0 bg-background z-10">
       {/* Left */}
       {/* collapseButton */}
       <SidebarTrigger></SidebarTrigger>
@@ -29,13 +29,15 @@ const Navbar = () => {
         <Link href="/">Dashboard</Link>
         {/* THEME MENU */}
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Button variant="outline" size="icon">
-              <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
+          <DropdownMenuTrigger
+            render={
+              <Button variant="outline" size="icon">
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            }
+          ></DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
               Light
