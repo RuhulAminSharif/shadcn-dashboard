@@ -21,7 +21,20 @@ import { Progress } from "@/components/ui/progress";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
 
-const SingleUserPage = () => {
+export async function generateStaticParams() {
+  return [
+    { username: "sharif" },
+    { username: "admin" },
+    { username: "test-user" },
+  ];
+
+}
+
+const SingleUserPage = ({
+  params,
+}: {
+  params: Promise<{ username: string }>;
+}) => {
   return (
     <div className="">
       <Breadcrumb>
